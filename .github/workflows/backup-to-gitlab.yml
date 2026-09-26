@@ -29,8 +29,9 @@ jobs:
             echo "::error::Add the GITLAB_TOKEN secret in THIS GitHub repository."
             exit 1
           fi
-          if [[ "${GITHUB_REPOSITORY_OWNER,,}" != "aaziko1market1" ]]; then
-            echo "::error::This workflow is for the Aaziko1Market1 account only."
+          if [[ "${GITHUB_REPOSITORY_OWNER,,}" != "aaziko1market1" && \
+                "${GITHUB_REPOSITORY_OWNER,,}" != "reactjsaaziko" ]]; then
+            echo "::error::This workflow is only for Aaziko1Market1 or reactjsaaziko."
             exit 1
           fi
 
